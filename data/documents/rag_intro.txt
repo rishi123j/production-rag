@@ -1,0 +1,17 @@
+Introduction to RAG Systems
+
+RAG stands for Retrieval Augmented Generation. It is a technique that combines information retrieval with large language model generation to produce accurate and grounded responses.
+
+How RAG Works
+RAG works in two phases. The first phase is indexing where documents are loaded, split into chunks, converted to embeddings and stored in a vector database. The second phase is retrieval where user questions are converted to embeddings and similar chunks are retrieved from the database.
+
+Why RAG Exists
+Large language models have several limitations. They have a knowledge cutoff date after which they do not know about new events. They can hallucinate and generate incorrect information confidently. They cannot access private documents that were not part of their training data.
+
+RAG solves all these problems by retrieving relevant information from your own documents and passing it to the LLM as context. This grounds the LLM response in real documents and reduces hallucination significantly.
+
+Vector Databases
+Vector databases store embeddings alongside metadata. They use approximate nearest neighbor algorithms like HNSW to search millions of vectors in milliseconds. ChromaDB is a popular open source vector database used in RAG systems.
+
+Embeddings
+Embeddings are numerical representations of text. They convert words sentences and paragraphs into lists of numbers called vectors. Similar meanings produce similar vectors that are close together in vector space.
