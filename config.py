@@ -17,7 +17,7 @@ TOP_K = 3
 SIMILARITY_THRESHOLD = 0.5
 
 LLM_PROVIDER = "groq"
-LLM_MODEL = "llama3-8b-8192"
+LLM_MODEL = "llama-3.3-70b-versatile"
 TEMPERATURE = 0
 MAX_TOKENS = 1000
 
