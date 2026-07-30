@@ -1,5 +1,6 @@
 from src.logger import setup_logger
 from config import COHERE_API_KEY, GROQ_API_KEY, LLM_MODEL, MAX_TOKENS, TEMPERATURE
+import time
 
 logger = setup_logger("generator")
 
@@ -61,11 +62,26 @@ def generate_answer(query, reranked_results):
         "rerank_scores": [r["rerank_score"] for r in reranked_results]
     }
 
-def rag_pipeline(query, bm25, chunks, vectorstore, model):
+def rag_pipeline(query, bm25, chunks, vectorstore, model, langfuse=None):
     logger.info(f"Running full RAG pipeline for: {query}")
+    start_time = time.time()
     from src.retriever import hybrid_search
     retrieved = hybrid_search(query, bm25, chunks, vectorstore, model, top_k=5)
     reranked = rerank_results(query, retrieved, top_n=3)
     result = generate_answer(query, reranked)
-    logger.info("RAG pipeline complete")
+    latency_ms = round((time.time() - start_time) * 1000, 2)
+    result["latency_ms"] = latency_ms
+    logger.info(f"Pipeline complete: latency={latency_ms}ms")
+    if langfuse:
+        from src.monitoring import trace_rag_query
+        trace = trace_rag_query(
+            langfuse=langfuse,
+            query=query,
+            retrieved_chunks=retrieved,
+            reranked_chunks=reranked,
+            answer=result["answer"],
+            rerank_scores=result["rerank_scores"],
+            latency_ms=latency_ms
+        )
+        result["trace_id"] = trace.id
     return result
