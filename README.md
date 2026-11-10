@@ -1,4 +1,4 @@
-\# Production RAG System
+ Production RAG System
 
 
 
@@ -6,7 +6,7 @@ A production-grade \*\*Retrieval Augmented Generation (RAG)\*\* system built fro
 
 
 
-\## 🏗️ Architecture
+🏗️ Architecture
 
 Document (PDF/TXT/DOCX)
 
@@ -42,27 +42,27 @@ Answer + Citations + Monitoring
 
 
 
-\## ✨ Features
+✨ Features
 
 
 
-\- \*\*Hybrid Retrieval\*\* — BM25 keyword search + vector semantic search combined with Reciprocal Rank Fusion
+Hybrid Retrieval\*\* — BM25 keyword search + vector semantic search combined with Reciprocal Rank Fusion
 
-\- \*\*Cohere Reranking\*\* — Cross-encoder reranking for precision improvement
+Cohere Reranking\*\* — Cross-encoder reranking for precision improvement
 
-\- \*\*Citation Enforcement\*\* — Every answer cites exact source documents
+Citation Enforcement\*\* — Every answer cites exact source documents
 
-\- \*\*Langfuse Monitoring\*\* — Full observability with traces, latency tracking, and quality scores
+Langfuse Monitoring\*\* — Full observability with traces, latency tracking, and quality scores
 
-\- \*\*Ragas Evaluation\*\* — Automated evaluation of faithfulness, answer relevancy, and context precision
+Ragas Evaluation\*\* — Automated evaluation of faithfulness, answer relevancy, and context precision
 
-\- \*\*FastAPI Deployment\*\* — Production REST API with 5 endpoints
+FastAPI Deployment\*\* — Production REST API with 5 endpoints
 
-\- \*\*Professional Logging\*\* — Structured logging with timestamps and log levels
+Professional Logging\*\* — Structured logging with timestamps and log levels
 
 
 
-\## 📊 Evaluation Results
+ 📊 Evaluation Results
 
 
 
@@ -80,7 +80,7 @@ Answer + Citations + Monitoring
 
 
 
-\## 🛠️ Tech Stack
+ 🛠️ Tech Stack
 
 
 
@@ -108,7 +108,7 @@ Answer + Citations + Monitoring
 
 
 
-\## 🚀 API Endpoints
+ 🚀 API Endpoints
 
 
 
@@ -128,7 +128,7 @@ Answer + Citations + Monitoring
 
 
 
-\## 📁 Project Structure
+ 📁 Project Structure
 
 
 
@@ -166,7 +166,7 @@ production-rag/
 
 
 
-\## ⚙️ Setup
+ ⚙️ Setup
 
 
 
@@ -212,7 +212,7 @@ uvicorn main:app --reload
 
 
 
-\## 🔬 Experiment Tracking
+ 🔬 Experiment Tracking
 
 
 
@@ -228,27 +228,27 @@ uvicorn main:app --reload
 
 
 
-\## 🎯 What I Learned Building This
+🎯 What I Learned Building This
 
 
 
-\- Built RAG pipeline manually before using LangChain — understood every abstraction
+ Built RAG pipeline manually before using LangChain — understood every abstraction
 
-\- Hybrid retrieval (BM25 + Vector) outperforms pure vector search
+ Hybrid retrieval (BM25 + Vector) outperforms pure vector search
 
-\- Reranking significantly improves precision over initial retrieval
+ Reranking significantly improves precision over initial retrieval
 
-\- Faithfulness score reveals LLM hallucination patterns
+ Faithfulness score reveals LLM hallucination patterns
 
-\- Production observability is as important as the model itself
-
-
-
-\## 👤 Author
+ Production observability is as important as the model itself
 
 
 
-\*\*Rishi\*\* — M.Tech AI \& Data Science
+ 👤 Author
+
+
+
+Rishi — M.Tech AI \& Data Science
 
 Target: LLM/GenAI Engineer Role
 
